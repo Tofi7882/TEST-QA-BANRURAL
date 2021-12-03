@@ -61,7 +61,7 @@
       let userGuess = guessField.value;
 
       var valoresAceptados = /^[0-9]+$/;
-      if (!userGuess.match(valoresAceptados)) {
+      if (!userGuess.match(valoresAceptados) || userGuess<1) {
           alert("No es numero entero ingrese el numero nuevamente");
           bandera = 1;
       }
@@ -78,7 +78,7 @@
       lowOrHi.textContent = '';
       setGameOver();
     } else if(guessCount == ATTEMPS) {
-        lastResult.textContent = '!!!Pérdistes!!!';
+        lastResult.textContent = '!!!Pérdiste!!!';
           lastResult.style.backgroundColor = 'red';
           lowOrHi.style.backgroundColor = 'white';
         setGameOver();
