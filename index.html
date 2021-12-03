@@ -61,8 +61,12 @@
       let userGuess = guessField.value;
 
       var valoresAceptados = /^[0-9]+$/;
-      if (!userGuess.match(valoresAceptados) || userGuess<1) {
+      if (!userGuess.match(valoresAceptados)) {
           alert("No es numero entero ingrese el numero nuevamente");
+          bandera = 1;
+      }
+      if (userGuess < 1 || userGuess>100) {
+          alert("debe de ingresar numeros mayores a 0 y menores a 100");
           bandera = 1;
       }
       if (bandera == 0) {
